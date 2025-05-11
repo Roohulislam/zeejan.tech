@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './pages/home/hero';
-import Services from './pages/home/services';
+import Services from './pages/home/Services';
 import Project from './pages/home/projects';
 import Technologies from './pages/home/Technologies';
 import Content from './pages/home/Content';
