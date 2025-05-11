@@ -1,0 +1,118 @@
+[
+    {
+        "name": "Web Development",
+        "icon": "💻",
+        "description": "We build custom software solutions from scratch to deployment, enhancing operational efficiency and driving digital innovation for your business.",
+        "keywords": [
+          "Custom web applications",
+          "Full-stack development",
+          "Responsive design",
+          "Cloud integration"
+        ],
+        "image": "web.avif"
+      },
+      {
+        "name": "Mobile Application Development",
+        "icon": "📱",
+        "description": "We craft high-performance mobile apps tailored to your business needs, delivering seamless user experiences across iOS and Android platforms.",
+        "keywords": [
+          "Cross-platform apps",
+          "React Native development",
+          "UI/UX design",
+          "App store optimization"
+        ],
+        "image": "mobail.png"
+      },
+      {
+        "name": "Digital Marketing",
+        "icon": "📈",
+        "description": "Data-driven digital strategies to amplify your brand's online presence, engage target audiences, and drive measurable business growth across all digital channels.",
+        "keywords": [
+          "SEO optimization",
+          "Social media marketing",
+          "PPC advertising",
+          "Content strategy",
+          "Conversion rate optimization"
+        ],
+        "image": "digital.avif"
+      },
+      {
+        "name": "AI/ML & GenAI Solutions",
+        "icon": "🤖",
+        "description": "We build cutting-edge artificial intelligence systems leveraging machine learning and generative AI to automate processes, extract insights, and drive innovation.",
+        "keywords": [
+          "Machine Learning Models",
+          "LLM Development",
+          "Computer Vision",
+          "Predictive Analytics",
+          "AI Integration"
+        ],
+        "image": "ai.png"
+      },
+      {
+        "name": "Custom Software Development",
+        "icon": "🛠️",
+        "description": "Tailor-made software solutions designed to streamline your operations, solve unique challenges, and drive digital transformation.",
+        "keywords": [
+          "Bespoke Applications",
+          "Enterprise Software",
+          "API Integrations",
+          "System Architecture",
+          "Cloud-Native Development"
+        ],
+        "image": "custom.avif"
+      },
+      {
+        "name": "UI/UX Design",
+        "icon": "🎨",
+        "description": "We craft intuitive, visually stunning interfaces that enhance user engagement and drive conversions through seamless digital experiences.",
+        "keywords": [
+          "User Interface Design",
+          "User Experience Research",
+          "Wireframing & Prototyping",
+          "Interaction Design",
+          "Design Systems"
+        ],
+        "image": "ux.webp"
+      },
+      {
+        "name": "Startup Branding",
+        "icon": "🚀",
+        "description": "Foundational branding for startups that captures your vision and scales with your growth, from MVP to market leader.",
+        "keywords": [
+          "Minimum Viable Branding",
+          "Pitch Deck Design",
+          "Investor Branding",
+          "Brand Messaging",
+          "Go-To-Market Identity"
+        ],
+        "image": "brand.webp"
+      },
+      {
+        "name": "Tech Staff Augmentation",
+        "icon": "👨💻",
+        "description": "Seamlessly integrate vetted tech professionals into your team to scale capacity, fill skill gaps, and accelerate project delivery.",
+        "keywords": [
+          "Dedicated Developers",
+          "IT Talent On-Demand",
+          "Team Extension",
+          "Tech Skill Augmentation",
+          "Project-Based Hiring"
+        ],
+        "image": "staf.webp"
+      },
+      {
+        "name": "E-commerce Development",
+        "icon": "🛒",
+        "description": "Custom online stores with conversion-optimized UX, seamless payment integrations, and scalable infrastructure for growth.",
+        "keywords": [
+          "Shopify/Headless",
+          "WooCommerce",
+          "Checkout Optimization",
+          "PWA",
+          "Inventory Systems"
+        ],
+        "image": "ecom.avif"
+      }
+  ]
+  
