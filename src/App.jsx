@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './pages/home/hero';
 import Services from './pages/home/Services';
-import Project from './pages/home/projects';
+import Project from './pages/home/Projects';
 import Technologies from './pages/home/Technologies';
 import Content from './pages/home/Content';
 import Choose from './pages/home/Choose';
