@@ -2,18 +2,29 @@
 import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaLaptopCode, FaMobileAlt, FaCode, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import logo from '../assets/image/alogo.png';
+import logo from '../assets/image/flogo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial width
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const navLinks = [
@@ -25,42 +36,60 @@ const Navbar = () => {
     { name: 'Location', path: '/about', icon: <FaMapMarkerAlt className="mr-1" /> }
   ];
 
+  // Check if we're in md viewport (768px-1023px)
+  const isMdViewport = windowWidth >= 768 && windowWidth < 1024;
+
   return (
-    <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex items-center">
-              <img src={logo} alt="Logo" className="h-16 md:h-20 w-auto" />
-              <span className="ml-1 text-xl font-semibold text-gray-800">Z&R tech</span>
+            <a href="/" className="flex h-16 items-center">
+              <img src={logo} alt="Logo" className="h-20 md:h-20 w-auto" />
             </a>
           </div>
 
-          {/* Desktop Navigation - All items in one line */}
-          <div className="hidden md:flex items-center">
-            <div className="flex items-center space-x-1">
-              {navLinks.map((link, index) => (
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              {navLinks.map((link, index) => {
+                // Skip Location link in md viewport
+                if (isMdViewport && link.name === 'Location') return null;
+                return (
+                  <a
+                    key={index}
+                    href={link.path}
+                    className="px-3 py-2 text-sm sm:mr-0.5 font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md flex items-center transition-colors whitespace-nowrap"
+                  >
+                    {link.icon && link.icon}
+                    {link.name}
+                  </a>
+                );
+              })}
+              
+              {/* Show button in place of Location for md viewport */}
+              {isMdViewport && (
                 <a
-                  key={index}
-                  href={link.path}
-                  className="px-2 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md flex items-center transition-colors whitespace-nowrap"
+                  href="/contact"
+                  className="ml-2 px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
                 >
-                  {link.icon && link.icon}
-                  {link.name}
+                  Get a Quote
                 </a>
-              ))}
+              )}
             </div>
             
-            {/* CTA Button with proper spacing */}
-            <div className="ml-4">
-              <a
-                href="/contact"
-                className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors whitespace-nowrap"
-              >
-                Get a Quote
-              </a>
-            </div>
+            {/* Show button at the end for larger screens */}
+            {!isMdViewport && (
+              <div className="ml-4">
+                <a
+                  href="/contact"
+                  className="px-4 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}

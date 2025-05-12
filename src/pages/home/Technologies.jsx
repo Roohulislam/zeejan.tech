@@ -18,10 +18,9 @@ import {
 } from "react-icons/si";
 
 const Technologies = () => {
-  const [activeCategory, setActiveCategory] = useState('web');
-  const [activeSubCategory, setActiveSubCategory] = useState('frontend');
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeSubCategory, setActiveSubCategory] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
-  const [expandedCategory, setExpandedCategory] = useState('web');
 
   useEffect(() => {
     setIsMounted(true);
@@ -118,10 +117,10 @@ const Technologies = () => {
   if (!isMounted) return <div className="flex items-center justify-center h-screen">Loading...</div>;
 
   const toggleCategory = (categoryId) => {
-    if (expandedCategory === categoryId) {
-      setExpandedCategory(null);
+    if (activeCategory === categoryId) {
+      setActiveCategory(null);
+      setActiveSubCategory(null);
     } else {
-      setExpandedCategory(categoryId);
       setActiveCategory(categoryId);
       const subCats = Object.keys(technologies[categoryId]);
       setActiveSubCategory(subCats[0]);
@@ -129,7 +128,7 @@ const Technologies = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className=" bg-gray-50">
       {/* Centered Heading Section */}
       <div className="text-center py-8 bg-white shadow-sm px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Our Technologies</h2>
@@ -139,28 +138,28 @@ const Technologies = () => {
       </div>
 
       {/* Mobile Category Selector */}
-      <div className="lg:hidden px-4 mb-6">
-        <div className="space-y-2">
+      <div className="lg:hidden px-4">
+        <div className="space-y-2 pb-4">
           {categories.map((category) => (
             <div key={category.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
               <button
                 onClick={() => toggleCategory(category.id)}
                 className={`flex items-center justify-between w-full p-4 text-left ${
-                  expandedCategory === category.id ? 'bg-blue-50' : 'hover:bg-gray-50'
+                  activeCategory === category.id ? 'bg-blue-50' : 'hover:bg-gray-50'
                 }`}
               >
                 <div className="flex items-center">
                   {category.icon}
                   <span className="ml-2 font-medium">{category.name}</span>
                 </div>
-                {expandedCategory === category.id ? (
+                {activeCategory === category.id ? (
                   <FaChevronUp className="text-gray-500" />
                 ) : (
                   <FaChevronDown className="text-gray-500" />
                 )}
               </button>
               
-              {expandedCategory === category.id && (
+              {activeCategory === category.id && (
                 <div className="bg-gray-50">
                   <div className="p-4">
                     <div className="grid grid-cols-2 gap-3">
@@ -181,28 +180,30 @@ const Technologies = () => {
                   </div>
                   
                   {/* Technology Cards for Mobile */}
-                  <div className="p-4">
-                    <h2 className="text-lg font-bold mb-4 capitalize">
-                      {category.name} - {activeSubCategory}
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 gap-4">
-                      {technologies[category.id][activeSubCategory]?.map((tech, index) => (
-                        <div 
-                          key={index} 
-                          className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-                        >
-                          <div className="flex items-center mb-2">
-                            <span className="text-xl mr-2">{tech.icon}</span>
-                            <h3 className="text-base font-semibold">{tech.name}</h3>
+                  {activeSubCategory && (
+                    <div className="p-4 pt-0">
+                      <h2 className="text-lg font-bold mb-3 capitalize">
+                        {category.name} - {activeSubCategory}
+                      </h2>
+                      
+                      <div className="grid grid-cols-1 gap-3">
+                        {technologies[category.id][activeSubCategory]?.map((tech, index) => (
+                          <div 
+                            key={index} 
+                            className="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                          >
+                            <div className="flex items-center mb-1">
+                              <span className="text-xl mr-2">{tech.icon}</span>
+                              <h3 className="text-base font-semibold">{tech.name}</h3>
+                            </div>
+                            <p className="text-xs text-gray-600">
+                              {tech.name} is used for {activeSubCategory} development...
+                            </p>
                           </div>
-                          <p className="text-sm text-gray-600">
-                            {tech.name} is used for {activeSubCategory} development...
-                          </p>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               )}
             </div>
@@ -213,7 +214,7 @@ const Technologies = () => {
       {/* Desktop Layout */}
       <div className="hidden lg:flex">
         {/* Sidebar */}
-        <div className="w-72 bg-blue-300 shadow-md">
+        <div className="w-72 h-150 bg-gray-100 shadow-md">
           <nav className="p-2 overflow-y-auto h-full">
             {categories.map((category) => (
               <div key={category.id}>
@@ -257,26 +258,30 @@ const Technologies = () => {
 
         {/* Technology Cards */}
         <div className="flex-1 p-8 overflow-auto">
-          <h2 className="text-2xl font-bold mb-6 capitalize">
-            {categories.find(c => c.id === activeCategory)?.name} - {activeSubCategory}
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {technologies[activeCategory]?.[activeSubCategory]?.map((tech, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-              >
-                <div className="flex items-center mb-3">
-                  <span className="text-2xl mr-3">{tech.icon}</span>
-                  <h3 className="text-lg font-semibold">{tech.name}</h3>
-                </div>
-                <p className="text-gray-600">
-                  {tech.name} is used for {activeSubCategory} development...
-                </p>
+          {activeCategory && activeSubCategory && (
+            <>
+              <h2 className="text-2xl font-bold mb-6 capitalize">
+                {categories.find(c => c.id === activeCategory)?.name} - {activeSubCategory}
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {technologies[activeCategory]?.[activeSubCategory]?.map((tech, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                  >
+                    <div className="flex items-center mb-3">
+                      <span className="text-2xl mr-3">{tech.icon}</span>
+                      <h3 className="text-lg font-semibold">{tech.name}</h3>
+                    </div>
+                    <p className="text-gray-600">
+                      {tech.name} is used for {activeSubCategory} development...
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          )}
         </div>
       </div>
     </div>

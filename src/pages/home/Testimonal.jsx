@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const Testimonial = () => {
   const testimonials = [
@@ -54,14 +54,6 @@ const Testimonial = () => {
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentPair((prev) => (prev + 1) % totalPairs);
-      setIsTransitioning(false);
-    }, 300);
-  };
-
-  const handlePrev = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentPair((prev) => (prev - 1 + totalPairs) % totalPairs);
       setIsTransitioning(false);
     }, 300);
   };
@@ -135,27 +127,6 @@ const Testimonial = () => {
               ))}
             </div>
           </div>
-
-          {testimonials.length > 2 && (
-            <>
-                   <button 
-                onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 transition-colors z-10"
-                style={{ left: '-4rem' }} // Adjusted positioning
-                aria-label="Previous testimonials"
-              >
-                <FaChevronLeft className="text-blue-600" />
-              </button>
-              <button 
-                onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 transition-colors z-10"
-                style={{ right: '-4rem' }} // Adjusted positioning
-                aria-label="Next testimonials"
-              >
-                <FaChevronRight className="text-blue-600" />
-              </button>
-            </>
-          )}
         </div>
 
         <div className="flex justify-center mt-8 gap-2">

@@ -16,24 +16,25 @@ import Visitus from './pages/home/Visitus';
 import Footer from './components/Footer';
 import CompanyOrg from './pages/home/Companyorg';
 
-
 const App = () => {
   return (
     <BrowserRouter>
-      <div className=" mx-auto max-w-[1800px] px-4 sm:px-4 lg:px-2">
+      <div className="w-full overflow-x-hidden">
         <Navbar/>
-        <Hero/>
-        <Services/>
-        <Content/>
-        <Project/>
-        <Technologies/>
-        <Choose/>
-        <Industries/>
-        <Testimonial/>
-        <FAQ/>
-        <ContactUs/>
-        <CompanyOrg/>
-        <Visitus/>
+        <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
+          <Hero/>
+          <Services/>
+          <Content/>
+          <Project/>
+          <Technologies/>
+          <Choose/>
+          <Industries/>
+          <Testimonial/>
+          <FAQ/>
+          <ContactUs/>
+          <CompanyOrg/>
+          <Visitus/>
+        </div>
         <Footer/>
       </div>
     </BrowserRouter>
