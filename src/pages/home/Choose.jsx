@@ -35,7 +35,7 @@ const Choose = () => {
   ];
 
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-7xl mx-auto">
         {/* Heading Section */}
         <div className="text-center mb-16">
@@ -53,10 +53,10 @@ const Choose = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              className="bg-white p-8 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-200"
             >
               <div className="flex items-center mb-4">
-                <div className="p-3 rounded-full bg-white shadow-sm mr-4">
+                <div className="p-3 rounded-full bg-gray-50 shadow-sm mr-4">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-800">{feature.title}</h3>
@@ -68,7 +68,13 @@ const Choose = () => {
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg">
+          <button 
+            className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
+            style={{ 
+              backgroundColor: '#0C359E',
+              color: 'white'
+            }}
+          >
             Start Your Project Today
           </button>
         </div>

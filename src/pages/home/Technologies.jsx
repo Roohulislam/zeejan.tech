@@ -128,7 +128,7 @@ const Technologies = () => {
   };
 
   return (
-    <div className=" bg-gray-50">
+    <div className="bg-[#F6F5F5]">
       {/* Centered Heading Section */}
       <div className="text-center py-8 bg-white shadow-sm px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Our Technologies</h2>
@@ -139,13 +139,13 @@ const Technologies = () => {
 
       {/* Mobile Category Selector */}
       <div className="lg:hidden px-4">
-        <div className="space-y-2 pb-4">
+        <div className="space-y-2 pt-6 pb-4">
           {categories.map((category) => (
             <div key={category.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
               <button
                 onClick={() => toggleCategory(category.id)}
                 className={`flex items-center justify-between w-full p-4 text-left ${
-                  activeCategory === category.id ? 'bg-blue-50' : 'hover:bg-gray-50'
+                  activeCategory === category.id ? 'bg-[#0C359E] text-white' : 'hover:bg-gray-50'
                 }`}
               >
                 <div className="flex items-center">
@@ -153,14 +153,14 @@ const Technologies = () => {
                   <span className="ml-2 font-medium">{category.name}</span>
                 </div>
                 {activeCategory === category.id ? (
-                  <FaChevronUp className="text-gray-500" />
+                  <FaChevronUp className="text-white" />
                 ) : (
                   <FaChevronDown className="text-gray-500" />
                 )}
               </button>
               
               {activeCategory === category.id && (
-                <div className="bg-gray-50">
+                <div className="bg-[#F6F5F5]">
                   <div className="p-4">
                     <div className="grid grid-cols-2 gap-3">
                       {Object.keys(technologies[category.id]).map((subCat) => (
@@ -169,7 +169,7 @@ const Technologies = () => {
                           onClick={() => setActiveSubCategory(subCat)}
                           className={`p-3 rounded text-sm font-medium ${
                             activeSubCategory === subCat
-                              ? 'bg-blue-100 text-blue-600'
+                              ? 'bg-[#0C359E] text-white'
                               : 'bg-white hover:bg-gray-100'
                           }`}
                         >
@@ -182,7 +182,7 @@ const Technologies = () => {
                   {/* Technology Cards for Mobile */}
                   {activeSubCategory && (
                     <div className="p-4 pt-0">
-                      <h2 className="text-lg font-bold mb-3 capitalize">
+                      <h2 className="text-lg font-bold  mb-3 capitalize">
                         {category.name} - {activeSubCategory}
                       </h2>
                       
@@ -214,7 +214,7 @@ const Technologies = () => {
       {/* Desktop Layout */}
       <div className="hidden lg:flex">
         {/* Sidebar */}
-        <div className="w-72 h-150 bg-gray-100 shadow-md">
+        <div className="w-72 h-150  bg-white shadow-md">
           <nav className="p-2 overflow-y-auto h-full">
             {categories.map((category) => (
               <div key={category.id}>
@@ -226,7 +226,7 @@ const Technologies = () => {
                   }}
                   className={`flex items-center w-full p-3 rounded-lg mb-1 ${
                     activeCategory === category.id 
-                      ? 'bg-blue-100 text-blue-600' 
+                      ? 'bg-[#0C359E] text-white' 
                       : 'hover:bg-gray-100'
                   }`}
                 >
@@ -242,7 +242,7 @@ const Technologies = () => {
                         onClick={() => setActiveSubCategory(subCat)}
                         className={`flex items-center w-full p-2 rounded ${
                           activeSubCategory === subCat 
-                            ? 'bg-blue-50 text-blue-600' 
+                            ? 'bg-[#0C359E] text-white' 
                             : 'hover:bg-gray-50'
                         }`}
                       >

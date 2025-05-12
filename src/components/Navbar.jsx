@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaLaptopCode, FaMobileAlt, FaCode, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
@@ -40,7 +39,10 @@ const Navbar = () => {
   const isMdViewport = windowWidth >= 768 && windowWidth < 1024;
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'}`}>
+    <nav 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'shadow-md py-2' : 'py-4'}`}
+      style={{ backgroundColor: '#F6F5F5' }}
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -60,7 +62,7 @@ const Navbar = () => {
                   <a
                     key={index}
                     href={link.path}
-                    className="px-3 py-2 text-sm sm:mr-0.5 font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md flex items-center transition-colors whitespace-nowrap"
+                    className="px-3 py-2 text-sm sm:mr-0.5 font-medium text-gray-800 hover:text-blue-700 hover:bg-opacity-10 hover:bg-gray-300 rounded-md flex items-center transition-colors whitespace-nowrap"
                   >
                     {link.icon && link.icon}
                     {link.name}
@@ -72,7 +74,8 @@ const Navbar = () => {
               {isMdViewport && (
                 <a
                   href="/contact"
-                  className="ml-2 px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
+                  className="ml-2 px-3 py-2 text-white text-sm font-medium rounded-md transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
+                  style={{ backgroundColor: '#0C359E' }}
                 >
                   Get a Quote
                 </a>
@@ -84,7 +87,8 @@ const Navbar = () => {
               <div className="ml-4">
                 <a
                   href="/contact"
-                  className="px-4 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
+                  className="px-4 py-2.5 text-white text-sm font-medium rounded-md transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
+                  style={{ backgroundColor: '#0C359E' }}
                 >
                   Get a Quote
                 </a>
@@ -96,7 +100,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-blue-700 hover:bg-opacity-10 hover:bg-gray-300 focus:outline-none"
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
@@ -107,13 +111,16 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-white shadow-lg`}>
+      <div 
+        className={`md:hidden ${isOpen ? 'block' : 'hidden'} shadow-lg`}
+        style={{ backgroundColor: '#F6F5F5' }}
+      >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navLinks.map((link, index) => (
             <a
               key={index}
               href={link.path}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100 flex items-center"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-blue-700 hover:bg-opacity-10 hover:bg-gray-300 flex items-center"
               onClick={() => setIsOpen(false)}
             >
               {link.icon && link.icon}
@@ -122,7 +129,8 @@ const Navbar = () => {
           ))}
           <a
             href="/contact"
-            className="block mx-2 mt-2 px-3 py-2 rounded-md text-base font-medium text-center text-white bg-blue-600 hover:bg-blue-700"
+            className="block mx-2 mt-2 px-3 py-2 rounded-md text-base font-medium text-center text-white"
+            style={{ backgroundColor: '#0C359E' }}
             onClick={() => setIsOpen(false)}
           >
             Get a Quote

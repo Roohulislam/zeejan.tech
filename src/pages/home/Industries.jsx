@@ -40,7 +40,7 @@ const Industries = () => {
   ];
 
   return (
-    <div className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-8xl mx-auto">
         {/* Mobile-only heading section (shown only on small screens) */}
         <div className="lg:hidden text-center mb-8">
@@ -54,7 +54,7 @@ const Industries = () => {
 
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Column - Heading, Paragraph, and CTA (hidden on mobile, shown on desktop) */}
-          <div className="hidden lg:flex lg:w-1/2 flex-col ">
+          <div className="hidden lg:flex lg:w-1/2 flex-col">
             <div className="sticky top-24">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Industries We Transform
@@ -64,7 +64,13 @@ const Industries = () => {
                 helping businesses innovate and excel in their respective markets. Our expertise spans multiple 
                 industries with specialized solutions for each.
               </p>
-              <button className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg w-full sm:w-auto">
+              <button 
+                className="flex items-center justify-center gap-2 font-medium py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
+                style={{ 
+                  backgroundColor: '#0C359E',
+                  color: 'white'
+                }}
+              >
                 View All Industries
                 <FaArrowRight />
               </button>
@@ -76,10 +82,10 @@ const Industries = () => {
             {industries.map((industry, index) => (
               <div 
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-blue-200"
               >
                 <div className="flex items-start">
-                  <div className="p-3 mr-4 rounded-full bg-blue-50">
+                  <div className="p-3 mr-4 rounded-full bg-gray-50">
                     {industry.icon}
                   </div>
                   <div>
@@ -94,7 +100,13 @@ const Industries = () => {
 
         {/* Mobile-only CTA button (shown only on small screens) */}
         <div className="lg:hidden mt-8 text-center">
-          <button className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg mx-auto">
+          <button 
+            className="flex items-center justify-center gap-2 font-medium py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg mx-auto"
+            style={{ 
+              backgroundColor: '#0C359E',
+              color: 'white'
+            }}
+          >
             View All Industries
             <FaArrowRight />
           </button>

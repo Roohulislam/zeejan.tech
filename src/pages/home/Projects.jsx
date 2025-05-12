@@ -82,7 +82,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -134,8 +134,13 @@ const Projects = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index * visibleItems)}
                   className={`mx-2 w-4 h-4 rounded-full transition-all ${
-                    currentIndex === index * visibleItems ? 'bg-blue-600 w-8' : 'bg-gray-300'
+                    currentIndex === index * visibleItems 
+                      ? 'w-8' : 'bg-gray-300'
                   }`}
+                  style={{
+                    backgroundColor: currentIndex === index * visibleItems 
+                      ? '#0C359E' : '#E5E7EB'
+                  }}
                   aria-label={`View projects ${index * visibleItems + 1}-${index * visibleItems + visibleItems}`}
                 />
               ))}

@@ -37,7 +37,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -52,7 +52,7 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="border border-gray-200 rounded-xl overflow-hidden transition-all duration-300"
+              className="border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 bg-white"
             >
               <button
                 onClick={() => toggleAccordion(index)}
@@ -89,7 +89,10 @@ const FAQ = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg">
+          <button 
+            className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-white"
+            style={{ backgroundColor: '#0C359E' }}
+          >
             Contact Our Team
           </button>
         </div>

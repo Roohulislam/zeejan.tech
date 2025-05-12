@@ -5,7 +5,7 @@ const Hero = () => {
   const youtubeEmbedUrl = "https://www.youtube.com/embed/nLCo3qwpEKU?autoplay=1&mute=1&loop=1&controls=0&playlist=nLCo3qwpEKU&rel=0&modestbranding=1";
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen mt-20 w-full overflow-hidden bg-[#F6F5F5]">
       {/* YouTube Video Container - Responsive Aspect Ratio */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <iframe
@@ -31,7 +31,7 @@ const Hero = () => {
         </p>
         <Link
           to="/contact"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300"
+          className="bg-[#0C359E] hover:bg-[#0a2d85] text-white px-8 py-3 rounded-lg text-lg font-semibold transition duration-300"
         >
           Consult Our Expert
         </Link>

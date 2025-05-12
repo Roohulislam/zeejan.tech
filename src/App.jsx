@@ -20,9 +20,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="w-full overflow-x-hidden">
-        <Navbar/>
+        <Navbar />
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
-          <Hero/>
+          <Hero />
           <Services/>
           <Content/>
           <Project/>

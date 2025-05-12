@@ -25,7 +25,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-12 px-4 sm:py-16 sm:px-6 lg:py-20 lg:px-8">
+    <div className="py-12 px-4 sm:py-16 sm:px-6 lg:py-20 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
@@ -168,7 +168,8 @@ const ContactUs = () => {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-sm sm:text-base"
+                style={{ backgroundColor: '#0C359E' }}
               >
                 Send Message <FiSend className="text-base sm:text-lg" />
               </button>

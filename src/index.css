@@ -1,15 +1,21 @@
 @import "tailwindcss";
 @theme {
-    --font-display: "Satoshi", "sans-serif";
-    --breakpoint-3xl: 120rem;
+  /* Primary colors (from ZEEJAN.tech) */
+  --color-primary: 243 75 59;  /* #3B82F6 - ZEEJAN blue */
+  --color-primary-dark: 37 99 235;  /* #2563EB */
+  --color-primary-light: 147 197 253;  /* #93C5FD */
   
-    --color-primary-blue: oklch(0.31 0.07 264);   /* #1f3b66 */
-    --color-accent-blue: oklch(0.62 0.13 259);    /* #0070b8 */
-    --color-gold: oklch(0.75 0.15 90);            /* #d3a847 */
-    --color-tagline-gray: oklch(0.65 0.02 250);   /* #7c8a97 */
-    --color-white: oklch(1 0 0);                  /* #ffffff */
+  /* Secondary colors (from CODE FOR FUTURE) */
+  --color-secondary: 107 114 128;  /* #6B7280 */
+  --color-secondary-dark: 75 85 99;  /* #4B5563 */
+  --color-secondary-light: 156 163 175;  /* #9CA3AF */
   
-    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-  }
+  /* Accent colors */
+  --color-tech: 30 64 175;  /* #1E40AF - .tech dark blue */
+  --color-future: 16 185 129;  /* #10B981 - Future green */
   
+  /* Backgrounds */
+  --color-bg: 255 255 255;  /* #FFFFFF */
+  --color-bg-light: 249 250 251;  /* #F9FAFB */
+  --color-bg-dark: 17 24 39;  /* #111827 */
+}
