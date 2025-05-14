@@ -12,7 +12,6 @@ import Choose from './components/Choose';
 import FAQ from './components/FAQ';
 import Home from './pages/Home';
 import Content from './components/Content';
-import Hero from './components/Hero';
 import CompanyOrg from './components/CompanyOrg';
 import Testimonial from './components/Testimonial';
 
@@ -33,7 +32,6 @@ const App = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/testimonials" element={<Testimonial/>} />
             <Route path="/content" element={<Content />} />
-            <Route path="/hero" element={<Hero/>} />
             <Route path="/companyorg" element={<CompanyOrg/>} />
           </Routes>
         </div>
