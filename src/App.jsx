@@ -17,7 +17,7 @@ const App = () => {
         <Navbar />
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/technology" element={<Technologies />} />
