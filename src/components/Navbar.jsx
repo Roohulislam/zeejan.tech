@@ -31,9 +31,10 @@ const navLinks = [
   { name: 'Services', path: '/services', icon: <FaLaptopCode className="mr-1" /> },
   { name: 'Projects', path: '/projects', icon: <FaCode className="mr-1" /> },
   { name: 'Technologies', path: '/technology', icon: <FaMobileAlt className="mr-1" /> }, // Fixed path
-  { name: 'Contact', path: '/contact', icon: <FaEnvelope className="mr-1" /> },
-  { name: 'Location', path: '/about', icon: <FaMapMarkerAlt className="mr-1" /> } // Fixed path
+  { name: 'Contact', path: '/contactus', icon: <FaEnvelope className="mr-1" /> },
+  { name: 'Location', path: '/Visitus', icon: <FaMapMarkerAlt className="mr-1" /> } // Fixed path
 ];
+
   // Check if we're in md viewport (768px-1023px)
   const isMdViewport = windowWidth >= 768 && windowWidth < 1024;
 
