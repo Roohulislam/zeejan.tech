@@ -13,7 +13,7 @@ import FAQ from './components/FAQ';
 import Testimonial from './components/Testimonal';
 import Home from './pages/Home';
 import Content from './components/Content';
-import Hero from './components/hero';
+import Hero from './components/Hero';
 import CompanyOrg from './components/Companyorg';
 
 const App = () => {
