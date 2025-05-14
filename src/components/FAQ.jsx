@@ -37,18 +37,18 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
+    <div className="py-10 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600">
             Find answers to common questions about our services and processes.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-2">
           {faqs.map((faq, index) => (
             <div 
               key={index}
@@ -60,7 +60,7 @@ const FAQ = () => {
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
-                <h3 className="text-lg font-medium text-gray-900">
+                <h3 className="text-sm md:text-xl font-medium text-gray-900">
                   {faq.question}
                 </h3>
                 {activeIndex === index ? (
@@ -74,7 +74,7 @@ const FAQ = () => {
                 id={`faq-content-${index}`}
                 className={`px-6 pb-6 pt-0 ${activeIndex === index ? 'block' : 'hidden'}`}
               >
-                <p className="text-gray-600 mb-4">{faq.answer}</p>
+                <p className="text-gray-600 mb-2">{faq.answer}</p>
                 <a
                   href={faq.learnMore}
                   target="_blank"
@@ -88,7 +88,7 @@ const FAQ = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <button 
             className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-white"
             style={{ backgroundColor: '#0C359E' }}

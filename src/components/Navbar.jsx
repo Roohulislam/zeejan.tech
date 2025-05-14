@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaLaptopCode, FaMobileAlt, FaCode, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import logo from '../assets/image/flogo.png';
+import logo from '../assets/image/flogooo.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,30 +26,28 @@ const Navbar = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services', icon: <FaLaptopCode className="mr-1" /> },
-    { name: 'Projects', path: '/projects', icon: <FaCode className="mr-1" /> },
-    { name: 'Technologies', path: '/mobile', icon: <FaMobileAlt className="mr-1" /> },
-    { name: 'Contact', path: '/contact', icon: <FaEnvelope className="mr-1" /> },
-    { name: 'Location', path: '/about', icon: <FaMapMarkerAlt className="mr-1" /> }
-  ];
-
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services', icon: <FaLaptopCode className="mr-1" /> },
+  { name: 'Projects', path: '/projects', icon: <FaCode className="mr-1" /> },
+  { name: 'Technologies', path: '/technology', icon: <FaMobileAlt className="mr-1" /> }, // Fixed path
+  { name: 'Contact', path: '/contact', icon: <FaEnvelope className="mr-1" /> },
+  { name: 'Location', path: '/about', icon: <FaMapMarkerAlt className="mr-1" /> } // Fixed path
+];
   // Check if we're in md viewport (768px-1023px)
   const isMdViewport = windowWidth >= 768 && windowWidth < 1024;
 
   return (
     <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'shadow-md py-2' : 'py-4'}`}
-      style={{ backgroundColor: '#F6F5F5' }}
+      className={`fixed top-0  w-full z-50 shadow-gray-300 shadow-sm`}
+      style={{ backgroundColor: '#eae9e7' }}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <a href="/" className="flex h-16 items-center">
-              <img src={logo} alt="Logo" className="h-20 md:h-20 w-auto" />
+              <img src={logo} alt="Logo" className="h-16 py-2 md:py-2 md:h-18 w-auto" />
             </a>
           </div>
 
@@ -74,7 +73,7 @@ const Navbar = () => {
               {isMdViewport && (
                 <a
                   href="/contact"
-                  className="ml-2 px-3 py-2 text-white text-sm font-medium rounded-md transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
+                  className="ml-2 px-3 py-2 text-white text-sm font-medium rounded-md transition-colors whitespace-nowrap shadow-lg hover:shadow-lg"
                   style={{ backgroundColor: '#0C359E' }}
                 >
                   Get a Quote

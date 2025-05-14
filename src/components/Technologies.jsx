@@ -130,7 +130,7 @@ const Technologies = () => {
   return (
     <div className="bg-[#F6F5F5]">
       {/* Centered Heading Section */}
-      <div className="text-center py-8 bg-white shadow-sm px-4">
+      <div className="text-center py-18 bg-white shadow-sm px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Our Technologies</h2>
         <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Explore our portfolio of successful implementations across various technologies

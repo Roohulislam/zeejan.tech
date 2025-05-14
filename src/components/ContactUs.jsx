@@ -25,7 +25,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="py-12 px-4 sm:py-16 sm:px-6 lg:py-20 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
+    <div className="py-18 px-4 sm:py-16 sm:px-6 lg:py-20 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">

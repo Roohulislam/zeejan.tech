@@ -57,14 +57,14 @@ const CompanyOrg = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
           >
             Meet Our Leadership
           </motion.h2>
@@ -72,7 +72,7 @@ const CompanyOrg = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
           >
             The brilliant minds driving innovation and growth at our company.
           </motion.p>
@@ -90,7 +90,7 @@ const CompanyOrg = () => {
               onHoverEnd={() => setHoveredCard(null)}
               className="relative bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-40 overflow-hidden">
                 <motion.img
                   src={member.image}
                   alt={member.name}
@@ -102,7 +102,7 @@ const CompanyOrg = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
 
-              <div className="p-6 text-center">
+              <div className="p-2 text-center">
                 <motion.h3 
                   className="text-xl font-bold text-gray-900 mb-1"
                   initial={{ opacity: 0 }}

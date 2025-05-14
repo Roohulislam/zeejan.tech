@@ -35,14 +35,14 @@ const Choose = () => {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
+    <div className="py-10 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-7xl mx-auto">
         {/* Heading Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Why Choose Our Software House
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             We combine technical expertise with business acumen to deliver digital solutions that drive growth, 
             efficiency, and competitive advantage for our clients worldwide.
           </p>
@@ -53,7 +53,7 @@ const Choose = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-200"
+              className="bg-gray-200 p-4 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border border-gray-200"
             >
               <div className="flex items-center mb-4">
                 <div className="p-3 rounded-full bg-gray-50 shadow-sm mr-4">
@@ -67,7 +67,7 @@ const Choose = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        <div className="mt-4 text-center">
           <button 
             className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
             style={{ 

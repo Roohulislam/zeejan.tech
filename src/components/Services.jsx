@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getServicesImgUrl } from "../../utils/getImgUrl";
+import { getServicesImgUrl } from "../utils/getImgUrl";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -26,12 +26,12 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-16" style={{ backgroundColor: '#F6F5F5' }}>
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold  text-center text-gray-800 mb-4 ">
+    <section id="services" className="py-18" style={{ backgroundColor: '#F6F5F5' }}>
+      <div className="container  mx-auto px-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold  text-center text-gray-800 mb-4 ">
           Our Services
         </h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
           Discover our wide range of air cargo solutions tailored to meet your
           shipping needs.
         </p>

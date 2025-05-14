@@ -40,14 +40,14 @@ const Industries = () => {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
+    <div className="py-8 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F6F5F5' }}>
       <div className="max-w-8xl mx-auto">
         {/* Mobile-only heading section (shown only on small screens) */}
         <div className="lg:hidden text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:3xl font-bold text-gray-900 mb-4">
             Industries We Transform
           </h2>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6">
             We deliver tailored software solutions that address unique challenges across diverse sectors.
           </p>
         </div>
@@ -82,7 +82,7 @@ const Industries = () => {
             {industries.map((industry, index) => (
               <div 
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-blue-200"
+                className="bg-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-blue-200"
               >
                 <div className="flex items-start">
                   <div className="p-3 mr-4 rounded-full bg-gray-50">

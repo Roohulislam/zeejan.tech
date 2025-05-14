@@ -76,13 +76,13 @@ const Testimonial = () => {
   ].filter(Boolean);
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Trusted by innovative companies worldwide. Here's what they have to say about working with us.
           </p>
         </div>
@@ -93,7 +93,7 @@ const Testimonial = () => {
               {currentTestimonials.map((testimonial, index) => (
                 <div 
                   key={testimonial.id}
-                  className="bg-white p-8 rounded-2xl shadow-xl h-full flex flex-col md:flex-row gap-6"
+                  className="bg-gray-100 p-8 rounded-2xl shadow-xl h-full flex flex-col md:flex-row gap-6"
                 >
                   <div className="flex flex-col items-center md:items-start">
                     <div className="relative mb-4">
