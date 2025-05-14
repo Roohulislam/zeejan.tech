@@ -1,5 +1,6 @@
 import Home from "../../pages/Home";
 import Content from "../Content";
+import Hero from "../Hero";
 
 export const allroutes = [
   { path: '/', element: <Home/> }, // Home should show Hero
@@ -14,5 +15,6 @@ export const allroutes = [
   { path: '/faq', element: <FAQ /> },
   { path: '/testimonals', element: <Testimonal /> },
   { path: '/content', element: <Content/>},
+  { path: '/hero', element: <Hero/>},
 
 ];
