@@ -8,10 +8,12 @@ import CompanyOrg from '../components/CompanyOrg'
 import Industries from '../components/Industries'
 import Testimonial from '../components/Testimonial'
 import Content from '../components/Content'
+import Hero from '../components/hero'
 
 const Home = () => {
   return (
     <div>
+        <Hero/>
         <Content/>
         <Services/>
         <Industries/>
