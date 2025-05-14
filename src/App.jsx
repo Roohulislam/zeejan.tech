@@ -3,18 +3,18 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
 import Services from './components/Services';
 import Projects from './components/Projects';
 import Technologies from './components/Technologies';
 import ContactUs from './components/ContactUs';
 import Visitus from './components/Visitus';
 import Choose from './components/Choose';
-import CompanyOrg from './components/CompanyOrg';
 import FAQ from './components/FAQ';
 import Testimonial from './components/Testimonal';
 import Home from './pages/Home';
 import Content from './components/Content';
+import Hero from './components/hero';
+import CompanyOrg from './components/Companyorg';
 
 const App = () => {
   return (
@@ -30,10 +30,11 @@ const App = () => {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/about" element={<Visitus />} />
             <Route path="/choose" element={<Choose />} />
-            <Route path="/companyorg" element={<CompanyOrg />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/testimonials" element={<Testimonial/>} />
             <Route path="/content" element={<Content/>} />
+            <Route path="/hero" element={<Hero/>} />
+            <Route path="/companyorg" element={<CompanyOrg/>} />
           </Routes>
         </div>
         <Footer />
