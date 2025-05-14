@@ -9,6 +9,7 @@ import Industries from '../components/Industries'
 import Testimonial from '../components/Testimonial'
 import Content from '../components/Content'
 import Hero from '../components/hero'
+import WhatsAppFloatButton from '../components/WhatsAppFloatButton'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
         <Choose/>
         <FAQ/>
         <CompanyOrg/>
+        <WhatsAppFloatButton/>
       
     </div>
   )

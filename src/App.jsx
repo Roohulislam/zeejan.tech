@@ -10,6 +10,7 @@ import ContactUs from './components/ContactUs';
 import Visitus from './components/Visitus';
 import Home from './pages/Home';
 import NotFound from './components/NotFound';
+import WhatsAppFloatButton from './components/WhatsAppFloatButton';
 
 const App = () => {
   return (
@@ -28,6 +29,8 @@ const App = () => {
           </Routes>
         </div>
         <Footer />
+        <WhatsAppFloatButton/>
+
       </div>
     </BrowserRouter>
   );

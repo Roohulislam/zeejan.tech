@@ -30,7 +30,7 @@ const Hero = () => {
           This is a compelling hero section paragraph.
         </p>
         <Link
-          to="/contact"
+          to="/contactus"
           className="bg-[#0C359E] hover:bg-[#0a2d85] text-white px-8 py-3 mb-6 rounded-lg text-lg font-semibold transition duration-300"
         >
           Consult Our Expert

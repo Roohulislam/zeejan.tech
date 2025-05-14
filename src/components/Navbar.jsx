@@ -73,7 +73,7 @@ const navLinks = [
               {/* Show button in place of Location for md viewport */}
               {isMdViewport && (
                 <a
-                  href="/contact"
+                  href="/contactus"
                   className="ml-2 px-3 py-2 text-white text-sm font-medium rounded-md transition-colors whitespace-nowrap shadow-lg hover:shadow-lg"
                   style={{ backgroundColor: '#0C359E' }}
                 >
@@ -86,7 +86,7 @@ const navLinks = [
             {!isMdViewport && (
               <div className="ml-4">
                 <a
-                  href="/contact"
+                  href="/contactus"
                   className="px-4 py-2.5 text-white text-sm font-medium rounded-md transition-colors whitespace-nowrap shadow-md hover:shadow-lg"
                   style={{ backgroundColor: '#0C359E' }}
                 >
