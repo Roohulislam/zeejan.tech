@@ -7,7 +7,7 @@ import Choose from '../components/Choose'
 import FAQ from '../components/FAQ'
 import CompanyOrg from '../components/CompanyOrg'
 import Industries from '../components/Industries'
-import Testimonial from '../components/Testimonal'
+import Testimonial from '../components/Testimonial'
 import Content from '../components/Content'
 
 const Home = () => {
