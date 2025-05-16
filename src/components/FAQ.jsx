@@ -89,12 +89,13 @@ const FAQ = () => {
         </div>
 
         <div className="mt-8 text-center">
-          <button 
-            className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-white"
-            style={{ backgroundColor: '#0C359E' }}
-          >
-            Contact Our Team
-          </button>
+      <a
+        href="/contactus"  // Replace with your contact page URL
+        className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg text-white inline-block text-center"
+        style={{ backgroundColor: '#0C359E' }}
+        >
+        Contact Our Team
+        </a>
         </div>
       </div>
     </div>

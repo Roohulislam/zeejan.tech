@@ -95,7 +95,7 @@ const Content = () => {
           {/* Talented Team */}
           <div className="bg-gray-300 p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
             <div className="flex justify-center mb-4">
-              <FaUsers className="text-4xl text-green-600" />
+              <FaUsers className="text-4xl text-blue-600" />
             </div>
             <h3 className="text-3xl font-bold text-gray-800 mb-2">
               {counts.team}+
@@ -106,7 +106,7 @@ const Content = () => {
           {/* Satisfied Clients */}
           <div className="bg-gray-300 p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
             <div className="flex justify-center mb-4">
-              <FaSmile className="text-4xl text-purple-600" />
+              <FaSmile className="text-4xl text-blue-600" />
             </div>
             <h3 className="text-3xl font-bold text-gray-800 mb-2">
               {counts.clients}+

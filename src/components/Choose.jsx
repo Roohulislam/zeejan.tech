@@ -8,27 +8,27 @@ const Choose = () => {
       description: "Enterprise-grade security protocols to protect your data and applications from modern threats."
     },
     {
-      icon: <FaRocket className="text-3xl text-purple-600" />,
+      icon: <FaRocket className="text-3xl text-blue-600" />,
       title: "Cutting-Edge Tech",
       description: "We work with the latest technologies to future-proof your digital solutions."
     },
     {
-      icon: <FaLightbulb className="text-3xl text-yellow-500" />,
+      icon: <FaLightbulb className="text-3xl text-blue-600" />,
       title: "Innovative Approach",
       description: "Creative problem-solving that transforms challenges into competitive advantages."
     },
     {
-      icon: <FaHandshake className="text-3xl text-green-600" />,
+      icon: <FaHandshake className="text-3xl text-blue-600" />,
       title: "Client-Centric",
       description: "Your success is our priority. We collaborate closely to understand your unique needs."
     },
     {
-      icon: <FaChartLine className="text-3xl text-red-500" />,
+      icon: <FaChartLine className="text-3xl text-blue-600" />,
       title: "Proven Results",
       description: "Track record of delivering measurable business impact through technology."
     },
     {
-      icon: <FaCode className="text-3xl text-indigo-600" />,
+      icon: <FaCode className="text-3xl text-blue-600" />,
       title: "Clean Code",
       description: "Meticulously crafted codebase that's scalable, maintainable, and efficient."
     }
@@ -68,15 +68,16 @@ const Choose = () => {
 
         {/* CTA Section */}
         <div className="mt-4 text-center">
-          <button 
-            className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
-            style={{ 
-              backgroundColor: '#0C359E',
-              color: 'white'
-            }}
-          >
-            Start Your Project Today
-          </button>
+         <a
+         href="/contactus"
+          className="font-medium py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg inline-block text-center"
+          style={{ 
+            backgroundColor: '#0C359E',
+            color: 'white'
+           }}
+         >
+          Start Your Project Today
+        </a>
         </div>
       </div>
     </div>

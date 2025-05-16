@@ -53,15 +53,16 @@ const Services = () => {
                 <p className="text-gray-600 mb-4">{service.description}</p>
               </div>
               <div className="p-6 mt-auto">
-                <button 
-                  className="w-full py-2 font-medium rounded transition hover:shadow-lg"
-                  style={{ 
-                    backgroundColor: '#0C359E',
-                    color: 'white'
+               <a 
+                href="/contactus" 
+                className="w-full py-2 font-medium rounded transition hover:shadow-lg block text-center"
+                style={{ 
+                 backgroundColor: '#0C359E',
+                color: 'white'
                   }}
-                >
+                   >
                   Get a Quick Quote
-                </button>
+                   </a>
               </div>
             </div>
           ))}

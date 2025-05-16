@@ -26,8 +26,17 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-white" style={{ backgroundColor: '#0C359E' }}>
+    <footer className="pt-0 pb-8 px-4 sm:px-6 lg:px-8 text-white" style={{ backgroundColor: '#0C359E' }}>
       <div className="max-w-7xl mx-auto">
+
+        {/* Banner Section */}
+        <div className="w-full bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center py-4 px-6 rounded-b-lg mb-10 shadow-md">
+          <p className="text-lg sm:text-xl font-medium">
+            🚀 Want to accelerate your digital transformation? <a href="/contactus" className="underline hover:text-blue-200">Get in touch with us today!</a>
+          </p>
+        </div>
+
+        {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
@@ -36,21 +45,11 @@ const Footer = () => {
               Building innovative digital solutions to transform businesses and enhance user experiences.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                <FaLinkedin className="text-xl" />
-              </a>
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                <FaTwitter className="text-xl" />
-              </a>
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                <FaGithub className="text-xl" />
-              </a>
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                <FaFacebook className="text-xl" />
-              </a>
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                <FaInstagram className="text-xl" />
-              </a>
+              {[FaLinkedin, FaTwitter, FaGithub, FaFacebook, FaInstagram].map((Icon, index) => (
+                <a key={index} href="#" className="text-blue-100 hover:text-white transition-colors">
+                  <Icon className="text-xl" />
+                </a>
+              ))}
             </div>
           </div>
 

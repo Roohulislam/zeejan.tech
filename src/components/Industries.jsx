@@ -3,7 +3,7 @@ import { FaHeartbeat, FaShoppingCart, FaMoneyBillWave, FaGraduationCap, FaTruck,
 const Industries = () => {
   const industries = [
     {
-      icon: <FaHeartbeat className="text-3xl text-red-500" />,
+      icon: <FaHeartbeat className="text-3xl text-blue-600" />,
       title: "Healthcare",
       description: "Custom healthcare solutions including EHR systems, telemedicine platforms, and medical IoT applications."
     },
@@ -13,27 +13,27 @@ const Industries = () => {
       description: "Scalable online stores, marketplace platforms, and personalized shopping experiences."
     },
     {
-      icon: <FaMoneyBillWave className="text-3xl text-green-600" />,
+      icon: <FaMoneyBillWave className="text-3xl text-blue-600" />,
       title: "Finance",
       description: "Fintech solutions, banking apps, payment gateways, and financial analytics tools."
     },
     {
-      icon: <FaGraduationCap className="text-3xl text-indigo-600" />,
+      icon: <FaGraduationCap className="text-3xl text-blue-600" />,
       title: "Education",
       description: "E-learning platforms, LMS systems, and educational mobile applications."
     },
     {
-      icon: <FaTruck className="text-3xl text-orange-500" />,
+      icon: <FaTruck className="text-3xl text-blue-600" />,
       title: "Logistics",
       description: "Supply chain management systems, fleet tracking, and warehouse automation solutions."
     },
     {
-      icon: <FaPlane className="text-3xl text-teal-500" />,
+      icon: <FaPlane className="text-3xl text-blue-600" />,
       title: "Travel",
       description: "Booking engines, travel management systems, and tourism mobile apps."
     },
     {
-      icon: <FaRunning className="text-3xl text-purple-600" />,
+      icon: <FaRunning className="text-3xl text-blue-600" />,
       title: "Sports",
       description: "Sports analytics platforms, fitness apps, and event management systems."
     }
