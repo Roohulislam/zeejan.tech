@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const WhatsAppFloatButton = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
-  const phoneNumber = "+923488560875"; // e.g., "+1234567890"
   const message = "Hello! I have a question about your services.";
 
   // Responsive visibility
@@ -23,7 +22,7 @@ const WhatsAppFloatButton = () => {
     setIsVisible(false);
     setTimeout(() => {
       window.open(
-        `https://wa.me/${+923488560875,+923458883861}?text=${encodeURIComponent(message)}`,
+        `https://wa.me/${+923488560875}?text=${encodeURIComponent(message)}`,
         "_blank"
       );
       setTimeout(() => setIsVisible(true), 1000);
