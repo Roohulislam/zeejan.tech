@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiX } from 'react-icons/fi';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
@@ -15,10 +15,12 @@ const ContactUs = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [alert, setAlert] = useState({ show: false, type: '', message: '' });
 
   // EmailJS configuration
   const SERVICE_ID = 'service_ub8n3ho';
-  const TEMPLATE_ID = 'template_ut3jdvc';
+  const CONTACT_TEMPLATE_ID = 'template_ut3jdvc';
+  const AUTO_REPLY_TEMPLATE_ID = 'template_qm1mi2y';
   const USER_ID = 'V5BnvkpAehYNLF9-X';
 
   const companyInfo = {
@@ -28,6 +30,18 @@ const ContactUs = () => {
     linkedin: 'https://linkedin.com/company/zandrtech',
     twitter: 'https://twitter.com/zandrtech',
     github: 'https://github.com/zandrtech'
+  };
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(USER_ID);
+  }, []);
+
+  const showAlert = (type, message) => {
+    setAlert({ show: true, type, message });
+    setTimeout(() => {
+      setAlert({ ...alert, show: false });
+    }, 5000);
   };
 
   const handleChange = (e) => {
@@ -40,24 +54,64 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.message) {
+      showAlert('error', 'Please fill in all required fields (Name, Email, and Message)');
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      showAlert('error', 'Please enter a valid email address');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
+      // Prepare data objects
+      const contactData = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        subject: formData.subject || 'No subject provided',
+        message: formData.message
+      };
+
+      const autoReplyData = {
+        to_name: formData.name,
+        to_email: formData.email,
+        subject: `Re: ${formData.subject || 'Your Inquiry'}`,
+        original_message: formData.message,
+        company_name: "ZEEJAN.tech",
+        response_time: "1-3 business days",
+        support_email: companyInfo.email,
+        current_date: new Date().toLocaleDateString()
+      };
+
+      // Send to company first
+      const primaryResponse = await emailjs.send(
         SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-        },
+        CONTACT_TEMPLATE_ID,
+        contactData,
         USER_ID
       );
 
-      alert('Thank you for your message! We will get back to you soon.');
+      // Only send auto-reply if primary email succeeded
+      if (primaryResponse.status === 200) {
+        await emailjs.send(
+          SERVICE_ID,
+          AUTO_REPLY_TEMPLATE_ID,
+          autoReplyData,
+          USER_ID
+        );
+      }
 
+      showAlert('success', 'Thank you for your message! We will get back to you soon. A confirmation has been sent to your email.');
+
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -66,27 +120,71 @@ const ContactUs = () => {
         message: ''
       });
 
-      setTimeout(() => {
-        navigate('/');
-      }, 2000);
+      // Redirect after delay
+      setTimeout(() => navigate('/'), 2000);
 
     } catch (error) {
-      console.error('EmailJS error:', error);
-      alert('There was an error sending your message. Please try again.');
+      console.error('EmailJS error details:', {
+        status: error?.status,
+        text: error?.text,
+        message: error?.message
+      });
+
+      let userErrorMessage = 'There was an error sending your message. Please try again.';
+      
+      if (error.text?.includes('recipients address is empty')) {
+        userErrorMessage = 'Email sending failed: Please provide a valid email address.';
+      }
+
+      showAlert('error', userErrorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-18 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative">
+      {/* Modern Alert */}
+      {alert.show && (
+        <div className={`fixed top-4 right-4 z-50 max-w-md w-full transform transition-all duration-300 ${alert.show ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className={`p-4 rounded-lg shadow-lg border-l-4 ${alert.type === 'success' ? 'bg-green-50 border-green-500' : 'bg-red-50 border-red-500'}`}>
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                {alert.type === 'success' ? (
+                  <svg className="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                ) : (
+                  <svg className="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                )}
+              </div>
+              <div className="ml-3">
+                <p className={`text-sm font-medium ${alert.type === 'success' ? 'text-green-800' : 'text-red-800'}`}>
+                  {alert.message}
+                </p>
+              </div>
+              <div className="ml-auto pl-3">
+                <button
+                  onClick={() => setAlert({ ...alert, show: false })}
+                  className={`inline-flex rounded-md focus:outline-none ${alert.type === 'success' ? 'hover:bg-green-100 text-green-500' : 'hover:bg-red-100 text-red-500'}`}
+                >
+                  <FiX className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12 lg:mb-16">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Get in Touch
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             We'd love to hear from you! Reach out for inquiries, collaborations, or just to say hello.
           </p>
         </div>
@@ -94,7 +192,7 @@ const ContactUs = () => {
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
           {/* Left Column - Contact Information */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 lg:p-10  sticky top-8">
+          <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 lg:p-10 sticky top-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
             
             <div className="space-y-6">
