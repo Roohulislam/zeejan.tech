@@ -6,7 +6,6 @@ const Services = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const servicesPerPage = 4;
 
-  // Fetch services data
   useEffect(() => {
     fetch("/services.json")
       .then((response) => response.json())
@@ -27,13 +26,12 @@ const Services = () => {
 
   return (
     <section id="services" className="py-18" style={{ backgroundColor: '#F6F5F5' }}>
-      <div className="container  mx-auto px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold  text-center text-gray-800 mb-4 ">
-          Our Services
+      <div className="container mx-auto px-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold text-center text-gray-800 mb-4">
+          Services
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
-          Discover our wide range of air cargo solutions tailored to meet your
-          shipping needs.
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 text-center">
+          Our software services empower businesses to innovate, streamline operations, and drive growth.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {currentServices.map((service, index) => (
@@ -53,22 +51,33 @@ const Services = () => {
                 <p className="text-gray-600 mb-4">{service.description}</p>
               </div>
               <div className="p-6 mt-auto">
-               <a 
-                href="/contactus" 
-                className="w-full py-2 font-medium rounded transition hover:shadow-lg block text-center"
-                style={{ 
-                 backgroundColor: '#0C359E',
-                color: 'white'
-                  }}
-                   >
-                  Get a Quick Quote
-                   </a>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a 
+                    href="/contactus" 
+                    className="flex-1 py-2 font-medium rounded transition hover:shadow-lg text-center"
+                    style={{ 
+                      backgroundColor: '#0C359E',
+                      color: 'white'
+                    }}
+                  >
+                    Quick Quote
+                  </a>
+                  <a 
+                    href={`/services/${service.id}`} // Update this to your actual service detail route
+                    className="flex-1 py-2 font-medium rounded transition hover:shadow-lg text-center border border-gray-300 hover:bg-gray-100"
+                    style={{ 
+                      color: '#0C359E'
+                    }}
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Slider navigation */}
+        {/* Pagination */}
         <div className="flex justify-center mt-10 space-x-2">
           <button
             onClick={() => goToPage(currentPage - 1)}

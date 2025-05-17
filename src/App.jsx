@@ -11,6 +11,7 @@ import Visitus from './components/Visitus';
 import Home from './pages/Home';
 import NotFound from './components/NotFound';
 import WhatsAppFloatButton from './components/WhatsAppFloatButton';
+import Web from './components/ServicesPages/Web';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:serviceId" element={<Web />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/technology" element={<Technologies />} />
             <Route path="/contactus" element={<ContactUs />} />

@@ -143,7 +143,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative">
+    <div className="min-h-screen bg-gray-50 py-18 px-4 sm:px-6 lg:px-8 relative">
       {/* Modern Alert */}
       {alert.show && (
         <div className={`fixed top-4 right-4 z-50 max-w-md w-full transform transition-all duration-300 ${alert.show ? 'translate-x-0' : 'translate-x-full'}`}>

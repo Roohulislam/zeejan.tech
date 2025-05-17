@@ -80,7 +80,7 @@ const Testimonial = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Our Clients Say
+            Client Feedback
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Trusted by innovative companies worldwide. Here's what they have to say about working with us.

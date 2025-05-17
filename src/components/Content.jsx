@@ -73,9 +73,7 @@ const Content = () => {
           
           {/* Large Paragraph */}
           <p className="text-sm sm:text-xl md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            For over a decade, we've been transforming ideas into digital realities. Our team of experts combines 
-            cutting-edge technology with creative solutions to deliver exceptional results that drive business growth 
-            and exceed client expectations. Every project is a new opportunity to innovate and push boundaries.
+           With over 5 years of experience, we bring ideas to life through innovative digital solutions, leveraging the latest technologies and creative expertise to drive business growth, exceed expectations, and push the boundaries of what's possible.
           </p>
         </div>
 
