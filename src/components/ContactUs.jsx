@@ -1,14 +1,26 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 
 const ContactUs = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+
+  // Company contact information
+  const companyInfo = {
+    email: 'rohailjan726@gmail.com', // Replace with your company email
+    phone: '+1 (123) 456-7890',     // Replace with your company phone
+    address: '123 Business Park, Tech City, TC 10001', // Replace with your address
+    linkedin: 'https://linkedin.com/company/zandrtech', // Your LinkedIn
+    twitter: 'https://twitter.com/zandrtech',           // Your Twitter
+    github: 'https://github.com/zandrtech'              // Your GitHub
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,10 +30,33 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    
+    try {
+      // Here you would typically send the data to your backend
+      console.log('Form submitted:', formData);
+      
+      // Show success alert
+      alert('Thank you for your message! We will get back to you soon.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      
+      // Redirect to home page after 2 seconds
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting your form. Please try again.');
+    }
   };
 
   return (
@@ -51,8 +86,8 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="text-base sm:text-lg font-medium text-gray-800">Email</h4>
-                    <a href="mailto:contact@yourcompany.com" className="text-blue-600 hover:text-blue-800 transition-colors text-sm sm:text-base">
-                      contact@yourcompany.com
+                    <a href={`mailto:${companyInfo.email}`} className="text-blue-600 hover:text-blue-800 transition-colors text-sm sm:text-base">
+                      {companyInfo.email}
                     </a>
                   </div>
                 </div>
@@ -63,8 +98,8 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="text-base sm:text-lg font-medium text-gray-800">Phone</h4>
-                    <a href="tel:+1234567890" className="text-gray-600 hover:text-gray-800 transition-colors text-sm sm:text-base">
-                      +1 (234) 567-890
+                    <a href={`tel:${companyInfo.phone.replace(/\D/g, '')}`} className="text-gray-600 hover:text-gray-800 transition-colors text-sm sm:text-base">
+                      {companyInfo.phone}
                     </a>
                   </div>
                 </div>
@@ -75,7 +110,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="text-base sm:text-lg font-medium text-gray-800">Office</h4>
-                    <p className="text-gray-600 text-sm sm:text-base">123 Tech Park, Silicon Valley, CA 94000</p>
+                    <p className="text-gray-600 text-sm sm:text-base">{companyInfo.address}</p>
                   </div>
                 </div>
               </div>
@@ -83,13 +118,13 @@ const ContactUs = () => {
               <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
                 <h4 className="text-base sm:text-lg font-medium text-gray-800 mb-3 sm:mb-4">Follow Us</h4>
                 <div className="flex space-x-3 sm:space-x-4">
-                  <a href="#" className="bg-gray-100 p-2 sm:p-3 rounded-full hover:bg-blue-100 hover:text-blue-600 transition-colors">
+                  <a href={companyInfo.linkedin} target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-2 sm:p-3 rounded-full hover:bg-blue-100 hover:text-blue-600 transition-colors">
                     <FaLinkedin className="text-lg sm:text-xl" />
                   </a>
-                  <a href="#" className="bg-gray-100 p-2 sm:p-3 rounded-full hover:bg-blue-100 hover:text-blue-400 transition-colors">
+                  <a href={companyInfo.twitter} target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-2 sm:p-3 rounded-full hover:bg-blue-100 hover:text-blue-400 transition-colors">
                     <FaTwitter className="text-lg sm:text-xl" />
                   </a>
-                  <a href="#" className="bg-gray-100 p-2 sm:p-3 rounded-full hover:bg-gray-200 hover:text-gray-800 transition-colors">
+                  <a href={companyInfo.github} target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-2 sm:p-3 rounded-full hover:bg-gray-200 hover:text-gray-800 transition-colors">
                     <FaGithub className="text-lg sm:text-xl" />
                   </a>
                 </div>
