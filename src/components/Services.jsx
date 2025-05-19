@@ -1,5 +1,7 @@
+// Services.jsx
 import React, { useEffect, useState } from "react";
 import { getServicesImgUrl } from "../utils/getImgUrl";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -33,7 +35,7 @@ const Services = () => {
         <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 text-center">
           Our software services empower businesses to innovate, streamline operations, and drive growth.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
           {currentServices.map((service, index) => (
             <div
               key={index}
@@ -62,23 +64,23 @@ const Services = () => {
                   >
                     Quick Quote
                   </a>
-                  <a 
-                    href={`/services/${service.id}`} // Update this to your actual service detail route
+                  <Link
+                    to={`/services/${service.id}`}
                     className="flex-1 py-2 font-medium rounded transition hover:shadow-lg text-center border border-gray-300 hover:bg-gray-100"
                     style={{ 
                       color: '#0C359E'
                     }}
                   >
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center mt-10 space-x-2">
+        {/* Pagination remains the same */}
+           <div className="flex justify-center mt-10 space-x-2">
           <button
             onClick={() => goToPage(currentPage - 1)}
             className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"

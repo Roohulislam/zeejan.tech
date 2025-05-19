@@ -6,22 +6,22 @@ const Web = () => {
     <section className="py-18 bg-gradient-to-b from-gray-50 to-white px-4">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto text-center mb-16 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 leading-tight">
           Transform Your Digital Presence
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8">
+        <p className="text-sm md:text-2xl text-gray-600 max-w-4xl mx-auto mb-4">
           We craft high-performance web solutions that drive engagement, conversions, and business growth.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             to="/contactus"
-            className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            className="px-6 py-3 bg-blue-800 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
             Start Your Project
           </Link>
           <Link
             to="/projects"
-            className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-300"
+            className="px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-300"
           >
             View Our Work
           </Link>
@@ -30,17 +30,17 @@ const Web = () => {
 
       {/* Services Section */}
       <div className="max-w-7xl mx-auto mb-20 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:text-xl">
             Comprehensive Web Solutions
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             From sleek corporate websites to complex web applications, we deliver tailored solutions for every business need.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {[
             { 
               title: 'Custom Web Applications', 
@@ -75,10 +75,10 @@ const Web = () => {
           ].map((service, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-blue-100"
+              className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-blue-100"
             >
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+              <div className="text-3xl mb-2">{service.icon}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
             </div>
           ))}
@@ -86,18 +86,18 @@ const Web = () => {
       </div>
 
       {/* Technology Stack */}
-      <div className="max-w-7xl mx-auto mb-20 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <div className="max-w-7xl mx-auto mb-12 px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Our Technology Stack
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             We leverage cutting-edge technologies to build fast, secure, and scalable web solutions.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-2">
           {[
             { name: 'React', logo: '⚛️', category: 'Frontend' },
             { name: 'Next.js', logo: '⏭️', category: 'Frontend' },
@@ -127,11 +127,11 @@ const Web = () => {
       {/* Process Section */}
       <div className="max-w-7xl mx-auto mb-20 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Our Development Process
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-blue-600 mx-auto mb-3"></div>
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             A transparent, collaborative approach that ensures your vision becomes reality.
           </p>
         </div>
@@ -185,9 +185,9 @@ const Web = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="max-w-4xl mx-auto bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mb-20">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto bg-blue-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mb-1">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">Ready to Transform Your Business?</h2>
+        <p className="text-base mb-4 max-w-2xl mx-auto">
           Let's discuss how we can help you achieve your digital goals.
         </p>
         <Link

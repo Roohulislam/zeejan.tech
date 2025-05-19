@@ -1,5 +1,6 @@
 [
     {
+        "id":"Web",
         "name": "Web Development",
         "icon": "💻",
         "description": "We build custom software solutions from scratch to deployment, enhancing operational efficiency and driving digital innovation for your business.",
@@ -12,6 +13,7 @@
         "image": "web.avif"
       },
       {
+        "id":"Mobile",
         "name": "Mobile Application Development",
         "icon": "📱",
         "description": "We craft high-performance mobile apps tailored to your business needs, delivering seamless user experiences across iOS and Android platforms.",
@@ -24,6 +26,7 @@
         "image": "mobail.png"
       },
       {
+        "id":"Digital",
         "name": "Digital Marketing",
         "icon": "📈",
         "description": "Data-driven digital strategies to amplify your brand's online presence, engage target audiences, and drive measurable business growth across all digital channels.",
@@ -37,6 +40,7 @@
         "image": "digital.avif"
       },
       {
+        "id":"Ai",
         "name": "AI/ML & GenAI Solutions",
         "icon": "🤖",
         "description": "We build cutting-edge artificial intelligence systems leveraging machine learning and generative AI to automate processes, extract insights, and drive innovation.",
@@ -50,6 +54,7 @@
         "image": "ai.png"
       },
       {
+        "id":"Custom",
         "name": "Custom Software Development",
         "icon": "🛠️",
         "description": "Tailor-made software solutions designed to streamline your operations, solve unique challenges, and drive digital transformation.",
@@ -63,6 +68,7 @@
         "image": "custom.avif"
       },
       {
+        "id":"Ui",
         "name": "UI/UX Design",
         "icon": "🎨",
         "description": "We craft intuitive, visually stunning interfaces that enhance user engagement and drive conversions through seamless digital experiences.",
@@ -76,6 +82,7 @@
         "image": "ux.webp"
       },
       {
+        "id":"Startup",
         "name": "Startup Branding",
         "icon": "🚀",
         "description": "Foundational branding for startups that captures your vision and scales with your growth, from MVP to market leader.",
@@ -89,6 +96,8 @@
         "image": "brand.webp"
       },
       {
+        "id":"Tech",
+
         "name": "Tech Staff Augmentation",
         "icon": "👨💻",
         "description": "Seamlessly integrate vetted tech professionals into your team to scale capacity, fill skill gaps, and accelerate project delivery.",
@@ -102,6 +111,7 @@
         "image": "staf.webp"
       },
       {
+        "id":"E_commerce",
         "name": "E-commerce Development",
         "icon": "🛒",
         "description": "Custom online stores with conversion-optimized UX, seamless payment integrations, and scalable infrastructure for growth.",
