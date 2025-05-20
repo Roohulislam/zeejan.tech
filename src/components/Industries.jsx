@@ -52,20 +52,48 @@ const Industries = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-24">
           {/* Left Column - Heading, Paragraph, and CTA (hidden on mobile, shown on desktop) */}
           <div className="hidden lg:flex lg:w-1/2 flex-col">
             <div className="sticky top-24">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-2xl font-bold text-gray-900 mb-6">
                 Industries We Transform
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                We deliver tailored software solutions that address unique challenges across diverse sectors, 
-                helping businesses innovate and excel in their respective markets. Our expertise spans multiple 
-                industries with specialized solutions for each.
-              </p>
+              <p className="text-lg text-gray-600 space-y-3">
+      We deliver tailored software solutions that address unique challenges across diverse sectors, 
+      helping businesses innovate and excel in their respective markets. From startups to enterprises, 
+      we empower organizations through modern web, mobile, and cloud technologies designed to streamline 
+      operations, enhance customer experience, and drive digital transformation.
+      
+      
+      Our team brings deep domain knowledge and agile development practices to industries such as:
+      <br /><br />
+      
+      <span className="block font-semibold text-gray-800">Healthcare</span>
+      Building HIPAA-compliant platforms, telemedicine apps, and AI-driven diagnostics to improve patient care and operational efficiency.
+      <br /><br />
+      
+      <span className="block font-semibold text-gray-800">Finance</span>
+      Developing secure fintech solutions, blockchain applications, and automated trading systems to enhance transparency and agility.
+      <br /><br />
+      
+      <span className="block font-semibold text-gray-800">Education</span>
+      Creating interactive e-learning platforms, virtual classrooms, and AI-powered tutoring systems to revolutionize modern education.
+      <br /><br />
+      
+      <span className="block font-semibold text-gray-800">Retail & E-Commerce</span>
+      Designing scalable online marketplaces, personalized shopping experiences, and omnichannel retail solutions to boost sales and engagement.
+      <br /><br />
+      
+      <span className="block font-semibold text-gray-800">Logistics & Supply Chain</span>
+      Implementing IoT-enabled tracking, warehouse automation, and AI-driven route optimization for smarter logistics management.
+      <br /><br />
+      
+      <span className="block font-semibold text-gray-800">Manufacturing</span>
+      Leveraging Industry 4.0 technologies like predictive maintenance, smart factories, and digital twins to optimize production and reduce downtime.
+    </p>
               <button 
-                className="flex items-center justify-center gap-2 font-medium py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 font-medium py-3 mt-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
                 style={{ 
                   backgroundColor: '#0C359E',
                   color: 'white'
