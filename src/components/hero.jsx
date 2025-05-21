@@ -7,29 +7,29 @@ const Hero = () => {
 
   // Different images for desktop and mobile
   const desktopSlides = [
-    "../../src/assets/image/heropic/1.jpg",
-    "../../src/assets/image/heropic/2.jpg",
-    "../../src/assets/image/heropic/3.jpg",
-    "../../src/assets/image/heropic/4.jpg",
-    "../../src/assets/image/heropic/5.jpg",
-    "../../src/assets/image/heropic/6.jpg",
-    "../../src/assets/image/heropic/7.jpg",
-    "../../src/assets/image/heropic/8.jpg",
-    "../../src/assets/image/heropic/9.jpg",
+    "../src/assets/image/heropic/1.jpg",
+    "../src/assets/image/heropic/2.jpg",
+    "../src/assets/image/heropic/3.jpg",
+    "../src/assets/image/heropic/4.jpg",
+    "../src/assets/image/heropic/5.jpg",
+    "../src/assets/image/heropic/6.jpg",
+    "../src/assets/image/heropic/7.jpg",
+    "../src/assets/image/heropic/8.jpg",
+    "../src/assets/image/heropic/9.jpg",
   ];
 
   const mobileSlides = [
-    "../../src/assets/image/web.avif", 
-    "../../src/assets/image/mobail.png", 
-    "../../src/assets/image/digital.avif", 
-    "../../src/assets/image/ai.png", 
-    "../../src/assets/image/brand.webp", 
-    "../../src/assets/image/staf.webp", 
-    "../../src/assets/image/ml.avif", 
-    "../../src/assets/image/custom.avif", 
-    "../../src/assets/image/ecom.avif", 
-    "../../src/assets/image/ui.avif", 
-    "../../src/assets/image/ux.webp", 
+    "../src/assets/image/web.avif", 
+    "../src/assets/image/mobail.png", 
+    "../src/assets/image/digital.avif", 
+    "../src/assets/image/ai.png", 
+    "../src/assets/image/brand.webp", 
+    "../src/assets/image/staf.webp", 
+    "../src/assets/image/ml.avif", 
+    "../src/assets/image/custom.avif", 
+    "../src/assets/image/ecom.avif", 
+    "../src/assets/image/ui.avif", 
+    "../src/assets/image/ux.webp", 
   ];
 
   const slides = isMobile ? mobileSlides : desktopSlides;
