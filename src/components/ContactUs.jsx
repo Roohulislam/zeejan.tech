@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiX } from 'react-icons/fi';
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
@@ -24,12 +24,14 @@ const ContactUs = () => {
   const USER_ID = 'V5BnvkpAehYNLF9-X';
 
   const companyInfo = {
-    email: 'rohailjan726@gmail.com',
-    phone: '+1 (123) 456-7890',
+    email: 'zeejantech@gmail.com',
+    phone: '+44 7731 602738',
     address: '123 Business Park, Tech City, TC 10001',
     linkedin: 'https://linkedin.com/company/zandrtech',
-    twitter: 'https://twitter.com/zandrtech',
-    github: 'https://github.com/zandrtech'
+    facebook: 'https://www.facebook.com/share/196P4ndrYW/',
+    whatsapp: 'https://wa.me/447731602738',
+    instagram: 'https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=y8yq4in',
+    tiktok: 'https://www.tiktok.com/@zeejan.tech?_t=ZS-8wUaOq5n36v&_r=1'
   };
 
   // Initialize EmailJS
@@ -240,10 +242,11 @@ const ContactUs = () => {
               </div>
             </div>
 
-            {/* Social Media */}
+            {/* Social Media - Updated with new platforms */}
             <div className="mt-10 pt-6 border-t border-gray-200">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Follow Us</h3>
               <div className="flex space-x-4">
+                {/* LinkedIn */}
                 <a 
                   href={companyInfo.linkedin} 
                   target="_blank" 
@@ -253,23 +256,49 @@ const ContactUs = () => {
                 >
                   <FaLinkedin className="text-xl" />
                 </a>
+                
+                {/* Facebook */}
                 <a 
-                  href={companyInfo.twitter} 
+                  href={companyInfo.facebook} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-gray-100 p-3 rounded-full hover:bg-blue-100 hover:text-blue-400 transition-colors"
-                  aria-label="Twitter"
+                  className="bg-gray-100 p-3 rounded-full hover:bg-blue-100 hover:text-blue-600 transition-colors"
+                  aria-label="Facebook"
                 >
-                  <FaTwitter className="text-xl" />
+                  <FaFacebook className="text-xl" />
                 </a>
+                
+                {/* WhatsApp */}
                 <a 
-                  href={companyInfo.github} 
+                  href={companyInfo.whatsapp} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-gray-100 p-3 rounded-full hover:bg-gray-200 hover:text-gray-800 transition-colors"
-                  aria-label="GitHub"
+                  className="bg-gray-100 p-3 rounded-full hover:bg-green-100 hover:text-green-600 transition-colors"
+                  aria-label="WhatsApp"
                 >
-                  <FaGithub className="text-xl" />
+                  <FaWhatsapp className="text-xl" />
+                </a>
+                
+                {/* Instagram */}
+                <a 
+                  href={companyInfo.instagram} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-gray-100 p-3 rounded-full hover:bg-pink-100 hover:text-pink-600 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="text-xl" />
+                </a>
+                
+                {/* TikTok */}
+                <a 
+                  href={companyInfo.tiktok} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-gray-100 p-3 rounded-full hover:bg-black hover:text-white transition-colors"
+                  aria-label="TikTok"
+                >
+                  <FaTiktok className="text-xl" />
                 </a>
               </div>
             </div>
