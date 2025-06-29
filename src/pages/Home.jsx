@@ -6,7 +6,7 @@ import Choose from '../components/Choose'
 import FAQ from '../components/FAQ'
 // import CompanyOrg from '../components/Companyorg'
 import Industries from '../components/Industries'
-import Testimonial from '../components/Testimonial'
+// import Testimonial from '../components/Testimonial'
 import Content from '../components/Content'
 import Hero from '../components/hero'
 import WhatsAppFloatButton from '../components/WhatsAppFloatButton'
@@ -18,7 +18,7 @@ const Home = () => {
         <Content/>
         <Services/>
         <Industries/>
-        <Testimonial/>
+        {/* <Testimonial/> */}
         <Choose/>
         <FAQ/>
         {/* <CompanyOrg/> */}
